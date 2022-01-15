@@ -39,8 +39,6 @@ class Calculator {
         this.currOperand = "";
     }
 
-    // add a helper function that is going to format the numbers
-    // use the Intl object and its NumberFormat method for the purpose.
     formatNumber(number) {
         if (number === "") return ""
         return new Intl.NumberFormat("en-US").format(number);
