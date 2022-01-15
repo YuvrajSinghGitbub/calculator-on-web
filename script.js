@@ -41,12 +41,18 @@ class Calculator {
 
     // add a helper function that is going to format the numbers
     // use the Intl object and its NumberFormat method for the purpose.
+    formatNumber(number) {
+        if (number === "") return ""
+        return new Intl.NumberFormat("en-US").format(number);
+    }
 
     updateDisplay() {
-        this.currOperandTE.innerText = this.currOperand;
+        // this.currOperandTE.innerText = this.currOperand;
+        this.currOperandTE.innerText = this.formatNumber(this.currOperand);
 
         if (this.operation != null) {
-            this.prevOperandTE.textContent = `${this.prevOperand} ${this.operation}`;
+            // this.prevOperandTE.textContent = `${this.prevOperand} ${this.operation}`;
+            this.prevOperandTE.textContent = `${this.formatNumber(this.prevOperand)} ${this.operation}`;
         }
         else {
             this.prevOperandTE.textContent = ""
